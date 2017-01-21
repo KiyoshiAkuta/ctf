@@ -1,0 +1,13 @@
+set follow-fork-mode child
+
+# puts in the function of input menu numner
+b *0x080489F8
+
+# call change note at select menu
+b *0x08048A8E
+
+# return at change note
+#b *0x08048955
+
+shell python -c 'import struct; print "1\n128\n1\n128\n1\n128\n"'> pwn
+r < pwn
